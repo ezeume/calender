@@ -1,3 +1,5 @@
+document.getElementById("currentDay").innerHTML=moment().format("dddd, MMM Do YYYY, h:mm a");
+
 var textArray = JSON.parse(localStorage.getItem("events"));
 console.log(textArray);
 
@@ -98,7 +100,18 @@ localStorage.setItem("events",storageArray);
 });
 
 
+var listOfHours = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 
+for (i=0; i<listOfHours.length; i++) {
+   var diff = moment().diff(moment([listOfHours[i]]));
+   if (diff > 0) {
+      $(".row" + i).addClass("past");
+   }else if (diff == 0) {
+      $(".row" + i).addClass("present");
+   }else if (diff < 0) {
+      $(".row" + i).addClass("future");
+   };
+};
 
 //
 
