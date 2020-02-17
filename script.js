@@ -101,26 +101,19 @@ localStorage.setItem("events",storageArray);
 
 
 var listOfHours = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
+var currentHour = moment().format("HH:mm")
 
 for (i=0; i<listOfHours.length; i++) {
-   var diff = moment().diff(moment([listOfHours[i]]));
+   // console.log([i]);
+   var diff = moment([currentHour]).diff(moment([listOfHours[i]]));
+   // console.log(diff);
    if (diff > 0) {
-      $(".row" + i).addClass("past");
+      $("#row" + i).addClass("past");
    }else if (diff == 0) {
-      $(".row" + i).addClass("present");
+      $("#row" + i).addClass("present");
    }else if (diff < 0) {
-      $(".row" + i).addClass("future");
+      $("#row" + i).addClass("future");
    };
-};
+};   
 
-//
-
-// var futureTime = 
-// var presentTime =
-// var pastTime = time-future
-
-// document.getElementById("9am").getAttribute("dataValue");
-// var time = moment().hour()
-// if (time === )
-// console.log(moment().hour());
 

@@ -6,7 +6,7 @@ body {
 }
 
    textarea{
-  background: rgb(200, 211, 216);
+  background: transparent;
   border: none;
   resize: none;
   color: #000000;
@@ -16,7 +16,7 @@ body {
 
 .jumbotron {
   text-align: center;
-  background-color:;
+  background-color: transparent;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -24,7 +24,6 @@ body {
 
 .description{
   white-space: pre-wrap;
-  color: rgb(141, 181, 204)
 }
 
 .time-block{
@@ -35,7 +34,7 @@ body {
  .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
 } 
 
 .hour {
