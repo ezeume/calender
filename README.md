@@ -6,4 +6,6 @@ WHEN I view the timeblocks for that day, then each timeblock is color coded to i
 
 ScreenShot (Schedular): ![image](Calender.png)
 
-Calender App link: https://ezeume.github.io/homework5/
+Calender App link: "https://ezeume.github.io/calender/"
+
+github link: https://github.com/ezeume/calender
