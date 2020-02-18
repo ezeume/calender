@@ -41,8 +41,10 @@ for (var i = 0; i < timeArray.length; i++) {
    //<div id="hour" class="col-lg-1 hour" dataValue="9">9am</div>
 
    var textarea = $("<textarea>");
+   var notetext = localStorage.getItem(timeArray[i])
    //<textarea></textarea>
    textarea.attr("id", timeArray[i]);
+   textarea.val(notetext)
    
    console.log(currenttimeinmil - timeArray[i])
    if (currenttimeinmil - timeArray[i] == 0) { textarea.attr("class", "col-lg-10  texta present"); }
@@ -79,10 +81,9 @@ $(".saveBtn").on("click", function () {
 
    console.log($(this).parent().children().children().prevObject[1])
    //getting the value  THIS DOES NOT WORK NEED TO WORK ON IT
-   var temp = "asdsda";
-   console.log(temp)
+   var notetext = $(this).prev().val();
    //set this val to local storage
-   localStorage.setItem(curhour, temp);
+   localStorage.setItem(curhour, notetext);
 
    //create another jquery if there is value for that specific hour    
    //    var oldEvents = JSON.parse(localStorage.getItem("events"));
