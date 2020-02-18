@@ -9,8 +9,7 @@ var currenttimeinmil = moment().format("HH");
 //step 2 get current military hour to style the input field for current /future / past
 console.log(currenttimeinmil)
 //step 1 dynamically create the calender with associated times, id, and classes
-//need to do dynamically add the btns
-//dynamically append via .container
+
 
 for (var i = 0; i < timeArray.length; i++) {
    var div = $("<div>");
@@ -30,18 +29,7 @@ for (var i = 0; i < timeArray.length; i++) {
    //<div id="hour" class="col-lg-1 hour" dataValue="9"></div>
    //WHEN I view the timeblocks for that day
    //THEN each timeblock is color coded to indicate whether it is in the past,
-   //once display is done, add attributes to represent 
-   // 1.check id for specific data (plannertime)
-   // 2. currenttime
-   // 3. determine time:
-   // plannertime -currenttime=
-   // if negative time = past
-   // if positive time = future
-   // if zero time = present
-   // 4. dynamically append the colored box area.. based on time we will add styling attribute to each box area. dont forget to dynamically add the submitbtns
-   //present = red
-   //future = gray
-   //current = green 
+   
    if (timeArray[i] < 13) {
       div2.text(timeArray[i] + "am");
    }
@@ -55,14 +43,7 @@ for (var i = 0; i < timeArray.length; i++) {
    var textarea = $("<textarea>");
    //<textarea></textarea>
    textarea.attr("id", timeArray[i]);
-   //<textarea id="9am"></textarea>
-   //add styling to the textarea
-   //if currenttimeinmil-timeArray[i] ==0
-   //add current styling
-   //if currenttimeinmil-timeArray[i] < 0
-   //add past styling
-   //if currenttimeinmil-timeArray[i] > 0
-   //add future styling
+   
    console.log(currenttimeinmil - timeArray[i])
    if (currenttimeinmil - timeArray[i] == 0) { textarea.attr("class", "col-lg-10  texta present"); }
    if (currenttimeinmil - timeArray[i] < 0) { textarea.attr("class", "col-lg-10 texta past"); }
@@ -98,7 +79,6 @@ $(".saveBtn").on("click", function () {
 
    console.log($(this).parent().children().children().prevObject[1])
    //getting the value  THIS DOES NOT WORK NEED TO WORK ON IT
-   //using DUMMY VALUE
    var temp = "asdsda";
    console.log(temp)
    //set this val to local storage
